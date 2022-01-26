@@ -22,11 +22,11 @@ initial_epochs = 4    # 第一轮仅仅训练最后一层
 second_epochs = 6     # 第二轮训练整个网络
 initial_learning_rate = 0.0001
 second_learning_rate = 0.00001
-dataset_name = "D2city_BDD"
-train_dir = "/nfs/dataset-adas_s3_dataset/public/xiawenze/data/D2_BDD_merge_img/images4/train"
-test_dir = "/nfs/dataset-adas_s3_dataset/public/xiawenze/data/D2_BDD_merge_img/images4/test"
+dataset_name = "Data"
+train_dir = "../train"
+test_dir = "../test"
 weight_path = "./checkpoint/mobilenet_v2_no_top.h5"
-output_path = "/nfs/volume-902-1/xiawenze/VehicleClassification/checkpoint/h5/"
+output_path = "./checkpoint/h5/"
 
 ############################################################################################################
 ## 1. 读取数据和数据预处理 #####################################################################################
