@@ -23,7 +23,7 @@ initial_learning_rate = 0.0001
 second_learning_rate = 0.00001
 dataset_name = "XXX"
 train_dir = "./train"
-test_dir = ".4/test"
+test_dir = "./test"
 weight_path = "./checkpoint/mobilenet_v2_no_top.h5"
 output_path = "./checkpoint/h5/"
 
