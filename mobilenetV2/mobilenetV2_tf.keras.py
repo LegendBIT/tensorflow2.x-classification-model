@@ -287,7 +287,7 @@ for layer in model.layers[:-1]:   # 改变trainable属性后，必须调用model
 # https://blog.csdn.net/lly1122334/article/details/118901557
 model.compile(optimizer=Adam(learning_rate=initial_learning_rate),
                 loss='sparse_categorical_crossentropy',
-                metrics=['sparse_categorical_accuracy'])
+                metrics=['sparse_categorical_accuracy'])   # 默认损失函数不包含softmax操作，需要模型最后一层本身包含softmax操作
 
 # 测试初始模型准确率
 loss0, accuracy0 = model.evaluate(test_dataset, verbose=2)
