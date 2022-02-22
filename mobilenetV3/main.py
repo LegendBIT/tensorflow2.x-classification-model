@@ -60,7 +60,7 @@ def train_step(gt_x, gt_y, epoch):  # 定义单次训练函数
     # 4.1 计算梯度，loss和acc，这里acc是指训练前的acc
     with tf.GradientTape() as tape:
         y = model(gt_x, training=True)  # model()函数需要指定training属性，该属性影响BN和dropout层，指定当前是训练模式还是测试模式，与trainable属性是两码事
-        loss = -tf.reduce_sum(gt_y*tf.math.log(y))  # 自定义的交叉熵损失函数
+        loss = -tf.reduce_sum(gt_y*tf.math.log(y))  # 自定义的交叉熵损失函数，模型最后一层本身包含softmax操作
     gradients = tape.gradient(loss, model.trainable_variables)
     correct_prediction = tf.equal(tf.argmax(y,1), tf.argmax(gt_y,1))
     accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
